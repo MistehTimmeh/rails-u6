@@ -1,0 +1,31 @@
+<% @customers.each do |c|%>
+<div class="column is-one-third">
+  <div class="card">
+    <div class="card-content">
+      <p class="title">
+        <%= c.full_name %>
+      </p>
+      <% if c.image.present? %>
+        <div class="card-image">
+          <figure class="image">
+            <%= image_tag c.image.variant(resize_to_limit: [250,250]), alt: "Customer image" %>
+          </figure>
+        </div>
+      <% end %>
+    </div>
+    <div class="card-footer">
+        <% if c.email.present? %>
+            <p class="card-footer-item">
+                email: <br><%= c.email %>
+            </p>
+        <% end %>
+      <p class="card-footer-item">
+        Phone Number: <br><%= c.phone_number %>
+      </p>
+      <p class="card-footer-item">
+        Notes: <br><%= c.notes %>
+      </p>
+    </div>
+  </div>
+</div>
+<% end %>

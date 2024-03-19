@@ -1,0 +1,15 @@
+<h1 class="title has-text-centered">Customers</h1>
+<h2 class="subtitle has-text-centered">Customers missing an email</h2>
+<div class="columns is-multiline">
+    <%= render partial: 'customer',
+                object: @customers,
+                locals: {} %>
+</div>
+<ul>
+    <li>
+        <a href="/">All customers</a>
+    </li>
+    <li>
+        <a href="/customers/alphabetized">Alphabetized</a>
+    </li>
+</ul>
